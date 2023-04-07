@@ -41,6 +41,30 @@ Feature: load features
       | features/load.feature:3 | 0      |
       | features/load.feature:6 | 1      |
       | features/load.feature   | 6      |
+      # caracteres potencialmente problemáticos para path
+      | features#/load.feature  | 6      |
+      | features</load.feature  | 6      |
+      | features>/load.feature  | 6      |
+      | features$/load.feature  | 6      |
+      | features+/load.feature  | 6      |
+      | features%/load.feature  | 6      |
+      | features!/load.feature  | 6      |
+      | features`/load.feature  | 6      |
+      | features&/load.feature  | 6      |
+      | features*/load.feature  | 6      |
+      | features'/load.feature  | 6      |
+      | features\|/load.feature | 6      |
+      | features{/load.feature  | 6      |
+      | features?/load.feature  | 6      |
+      | features"/load.feature  | 6      |
+      | features=/load.feature  | 6      |
+      | features}/load.feature  | 6      |
+      | features\\/load.feature | 6      |
+      | feat  ures/load.feature | 6      |
+      | features@/load.feature  | 6      |
+      | feat:ures/load.feature  | 6      |
+
+
 
   Scenario: load a number of feature files
     Given a feature path "features/load.feature"
